@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #FAFAF9; /* light background */
+    --bg-secondary: #F1F1EF; /* light secondary */
+    --text-primary: #171717; /* dark text */
+    --text-secondary: #737373;
+    --border-color: #E5E5E5;
+    --accent: #06b6d4; /* teal‑cyan accent */
+  }
+
+  .dark {
+    --bg-primary: #151515; /* deep dark */
+    --bg-secondary: #1a1a1a;
+    --text-primary: #fafafa;
+    --text-secondary: #bbbbbb;
+    --border-color: #333333;
+    --accent: #06b6d4; /* same accent */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: #ffffff;
+  }
+
+  /* Utility classes using CSS variables */
+  .bg-primary { background-color: var(--bg-primary); }
+  .bg-secondary { background-color: var(--bg-secondary); }
+  .text-primary { color: var(--text-primary); }
+  .text-secondary { color: var(--text-secondary); }
+  .border-primary { border-color: var(--border-color); }
+  .accent-bg { background-color: var(--accent); }
+  .accent-text { color: var(--accent); }
+
+  /* Glassmorphism helper */
+  .glass {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0.875rem;
+  }
+}
+
+/* Custom Design System Classes */
+.container-custom {
+  width: 100%;
+  max-width: 72rem; /* 1152px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Minimalist Editorial Card */
+.editorial-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 0.875rem;
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+}
+
+.editorial-card:hover {
+  border-color: #D4D4D4;
+  box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Editorial Button Styles */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 180ms ease;
+  border: 1px solid var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0ea5e9; /* slightly darker accent */
+  border-color: #0ea5e9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 180ms ease;
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+  transform: translateY(-1px);
+}
+
+/* Badges */
+.badge-minimal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+/* Subtle dot background for hero & section highlights */
+.bg-grid-pattern {
+  background-image: radial-gradient(#E5E5E5 1px, transparent 1px);
+  background-size: 24px 24px;
+}
