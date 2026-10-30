@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import profileImg from '@/assets/Foto.jpg'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,9 +23,11 @@ export default function Navbar() {
       <div className="container-custom flex items-center justify-between h-16">
         {/* Brand Logo & Name */}
         <Link to="/" className="flex items-center gap-2.5 text-decoration-none group shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-[#171717] text-white flex items-center justify-center font-bold text-xs tracking-wider group-hover:bg-[#262626] transition-colors shadow-xs">
-            MR
-          </div>
+          <img
+            src={profileImg}
+            alt="Foto profil Muhamad Risqi"
+            className="w-8 h-8 rounded-lg object-cover shadow-xs"
+          />
           <div className="flex flex-col">
             <span className="font-bold text-sm tracking-tight text-[#171717]">
               Muhamad Risqi
